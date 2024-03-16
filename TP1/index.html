@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejercicio</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+  </head>
+<body>
+    <header>
+        <h1>
+            Formulario de datos
+        </h1>
+    </header>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Ingrese su nombre">
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" placeholder="Ingrese su apellido">
+
+    
+
+    <label for="ciudad">Ciudad:</label>
+    <select id="ciudad" aria-placeholder="Ingrese ciudad">
+        <optgroup label="Buenos aires">
+            <option value="" disabled selected>-Seleccione-</option>       
+            <option value="Chascomus">Chascomus</option>       
+            <option value="Ranchos">Ranchos</option>       
+            <option value="Lezama">Lezama</option>       
+            <option value="Castelli">Castelli</option>       
+            <option value="Otra">Otra ciudad en PBA</option>
+        </optgroup>
+        <optgroup label="Otras provincias">
+            <option value="Otra">Otra ciudad fuera de PBA</option>
+        </optgroup>
+    </select>
+
+    <label for="musica">Banda musical:</label>
+    <input list="musica" id="musicaInput" placeholder="AC/DC"/>
+    <datalist id="musica">
+        <option value="Queen">Queen</option>
+        <option value="AC/DC" selected>AC/DC</option>
+        <option value="Red Hot Chilli Peppers">Red Hot Chilli Peppers</option>
+        <option value="Daft Punk">Daft Punk</option>
+        <option value="Soda Stereo">Soda Stereo</option>
+        <option value="The Beatles">The Beatles</option>
+        <option value="Deep Purple">Deep Purple</option>
+    </datalist>
+
+    <label for="deporte">Deporte favorito:</label>
+    <input list="deporte" id="deporteInput" placeholder="Ingrese un deporte">
+    <datalist id="deporte">
+        <option value="Futbol" selected>Futbol</option>
+        <option value="Tenis">Tenis</option>
+        <option value="Rugby">Rugby</option>
+        <option value="Natación">Natación</option>
+    </datalist>
+
+    <label for="cumpleanos">Cumpleaños:</label>
+    <input type="date" id="cumpleanos" placeholder="Ingrese su cumpleaños">
+    <button onclick="mostrarDatos()">Haz click para visualizar tus datos</button>
+    <div id="datos-container"></div>
+    <footer>
+        <p>Derechos reservados <span id="copi"></span>&copy; Girado Francisco</p>
+    </footer>
+  </body>
+</html>
