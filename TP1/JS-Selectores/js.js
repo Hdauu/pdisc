@@ -27,3 +27,9 @@ for (let i = 0; i < elementosFormulario.length; i++) {
 // Cambiar el color de fondo del elemento cuyo id es "contenido" (style.background-color = ‘red’)
 let elementoContenido = document.getElementById("contenido");
 elementoContenido.style.backgroundColor = 'red';
+
+// La cantidad de elementos "span" que tiene la página
+let elementosSpan = document.getElementsByTagName("span");
+let cantidadSpan = elementosSpan.length;
+console.log("Cantidad de elementos <span> en la página:", cantidadSpan);
+
