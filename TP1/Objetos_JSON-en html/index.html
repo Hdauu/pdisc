@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Dispositivos, Profesores y Materias</title>
+    
+    <style>
+            
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Cargar Datos de un Dispositivo</h2>
+    <form id="formDispositivo">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="netbook">Netbook</option>
+            <option value="mouse">Mouse</option>
+            <option value="teclado">Teclado</option>
+        </select><br><br>
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required><br><br>
+        <label for="profesor">Profesor:</label>
+        <input type="text" id="profesor" name="profesor" required><br><br>
+        <label for="materia">Materia:</label>
+        <input type="text" id="materia" name="materia" required><br><br>
+        <label for="aula">Aula:</label>
+        <input type="text" id="aula" name="aula" required><br><br>
+        <input type="submit" value="Guardar Dispositivo">
+    </form>
+
+    <h2>Listado de Dispositivos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Código</th>
+                <th>Estado</th>
+                <th>Profesor</th>
+                <th>Materia</th>
+                <th>Aula</th>
+            </tr>
+        </thead>
+        <tbody id="dispositivos">
+        </tbody>
+    </table>
+
+    <h2>Cargar Datos del Profesor</h2>
+    <form id="formProfesor">
+        <label for="nombreProfesor">Nombre:</label>
+        <input type="text" id="nombreProfesor" name="nombreProfesor" required><br><br>
+        <label for="apellidoProfesor">Apellido:</label>
+        <input type="text" id="apellidoProfesor" name="apellidoProfesor" required><br><br>
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required><br><br>
+        <input type="submit" value="Guardar Profesor">
+    </form>
+
+    <h2>Cargar Datos de una Materia</h2>
+    <form id="formMateria">
+        <label for="nombreMateria">Nombre de la Materia:</label>
+        <input type="text" id="nombreMateria" name="nombreMateria" required><br><br>
+        <label for="año">Año:</label>
+        <input type="text" id="año" name="año" required><br><br>
+        <label for="profesor">Profesor:</label>
+        <input type="text" id="profesor" name="profesor" required><br><br>
+        <input type="submit" value="Guardar Materia">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
