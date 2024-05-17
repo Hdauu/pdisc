@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujar palabra</title>
+    <style>
+        #containerPalabra {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #palabraDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .letter {
+            font-size: 24px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="palabraDiv">
+        <input type="text" id="inputPalabra" placeholder="Ingrese una palabra">
+        <button onclick="dibujarPalabra()">Dibujar</button>
+    </div>
+    <div id="containerPalabra"></div>
+
+    <script>
+        function dibujarPalabra() {
+            var word = document.getElementById("inputPalabra").value.toLowerCase();
+            var container = document.getElementById("containerPalabra");
+            container.innerHTML = "";
+
+            for (var i = 0; i < word.length; i++) {
+                var letterDiv = document.createElement("div");
+                letterDiv.textContent = word[i];
+                letterDiv.classList.add("letter");
+                letterDiv.setAttribute("onclick", "letterClicked(this)");
+                container.appendChild(letterDiv);
+            }
+        }
+
+        function letterClicked(letterDiv) {
+            var clickedLetter = letterDiv.textContent;
+            alert("Has clickeado la letra: " + clickedLetter);
+        }
+    </script>
+
+</body>
+
+</html>
