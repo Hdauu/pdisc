@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Combinados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #coordenadas {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .seccion {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ejercicio 1: Validar edades mayores a 18 -->
+    <div class="seccion">
+        <h2>Ejercicio 1: Validar edades mayores a 18</h2>
+        <table>
+            <tr>
+                <td><input type="text" class="edad" id="edad-0"></td>
+                <td><input type="checkbox" id="check-0"></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="edad" id="edad-1"></td>
+                <td><input type="checkbox" id="check-1"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" onclick="validarEdades()" value="validar">
+                </td>
+            </tr>
+        </table>
+        <script>
+            function validarEdades() {
+                let edades = document.querySelectorAll(".edad");
+                let allChecked = true;
+
+                edades.forEach((elem, ind) => {
+                    let check = document.querySelector("#check-" + ind);
+                    if (parseInt(elem.value) > 18) {
+                        check.checked = true;
+                    } else {
+                        check.checked = false;
+                        allChecked = false;
+                    }
+                });
+                              
+                if (allChecked) {
+                    edades.forEach((elem, ind) => {
+                        let check = document.querySelector("#check-" + ind);
+                        check.checked = true;
+                    });
+                }
+            }
+        </script>
+    </div>
+
+    <!-- Ejercicio 2: Dibujar una palabra y asignarle un evento -->
+    <div class="seccion">
+        <h2>Ejercicio 2: Dibujar una palabra y asignarle un evento</h2>
+        <input type="text" id="palabra">
+        <input type="button" onclick="dibujarPalabra()" value="dibujar">
+        <div id="dibujo"></div>
+        <script>
+            function dibujarPalabra(){
+                let palabra = document.querySelector("#palabra").value;
+                let dibujo = document.querySelector("#dibujo");
+                dibujo.innerHTML = ''; 
+                for (const letra of palabra) {
+                    dibujo.innerHTML += `<span onclick="mostrarLetra('${letra}')"><h1>${letra}</h1></span>`;
+                }
+            }
+            function mostrarLetra(letra){
+                alert(letra);
+            }
+        </script>
+    </div>
+
+    <!-- Ejercicio 3: Toggle show/hide -->
+    <div class="seccion">
+        <h2>Ejercicio 3: Toggle show/hide</h2>
+        <div id="div1">Div 1</div>
+        <input type="button" onclick="toggleMostrar()" value="mostrar/ocultar">
+        <script>
+            function toggleMostrar(){
+                let div = document.querySelector("#div1");
+                if(div.style.display === "none"){
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+
+    <!-- Ejercicio 4: Posición del mouse -->
+    <div class="seccion">
+        <h2>Ejercicio 4: Posición del mouse</h2>
+        <div id="coordenadas">Posición del mouse: </div>
+        <script>
+            const coordenadasElemento = document.getElementById('coordenadas');
+            function mostrarCoordenadas(event) {
+                const x = event.clientX;
+                const y = event.clientY;
+                coordenadasElemento.textContent = `Posición del mouse: (${x}, ${y})`;
+            }
+            document.addEventListener('mousemove', mostrarCoordenadas);
+        </script>
+    </div>
+
+</body>
+</html>
