@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras</title>
+    <link type="image/png" sizes="16x16" rel="icon" href="./img/icons8-controlador-xbox-16.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="palabraDiv">
+        <input class="input" type="text" id="entradaPalabra" placeholder="Ingrese una palabra">
+        <button class="btn btn-agregar" onclick="agregarPalabra()">Agregar Palabra</button>
+        <button class="btn btn-iniciar" onclick="iniciarJuego()">Iniciar Juego</button>
+    </div>
+    <div id="gameContainer">
+        <div id="listaPalabrasContainer">
+            <div id="listaPalabras"></div>
+        </div>
+        <div id="sopaDeLetras"></div>
+    </div>
+
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
